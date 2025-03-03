@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.card-writing-mode-vertical{
+    writing-mode: vertical-lr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    letter-spacing: 8px;
+}
+
+.bg-img-center-cover{
+    @apply bg-cover bg-no-repeat bg-center
+}
+
 @media (max-width: 768px) {
     .rwd-show{
         display: block;
