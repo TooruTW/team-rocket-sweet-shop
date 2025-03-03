@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 768px) {
+    .rwd-show{
+        display: block;
+    }
+    .md-burger-nav-ul{
+        width: 80%;
+        color: #EAF0ED;
+        margin: 0;
+        position: absolute;
+        flex-direction: column;
+        left: -1000px;
+        bottom: -160px;
+        gap: 8px;
+        z-index: 5;
+        transition: all 0.5s ease;
+        backdrop-filter: blur(10px);
+    }
+    .md-burger-nav-ul-show{
+        transform: translateX(1000px);
+    }
+
+    .md-header-list{
+        padding-left: 16px;
+        background-color: #3F5D45;
+        font-size: 32px;
+        width: 100%;
+    }
+}
