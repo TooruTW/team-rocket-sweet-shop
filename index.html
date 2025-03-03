@@ -4,11 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/output.css">
-    <title>Document</title>
+    <title>Sweetast</title>
 
 </head>
-<body class="w-screen h-screen flex justify-center items-center ">
-    <h1 class="text-9xl bg-slate-500">Hello World!</h1>
-    <p class="font-pingfang">平方字體</p>
+<body class="w-full h-auto flex justify-center flex-col font-pingfang text-[#3F5D45]">
+
+    <!-- header -->
+    <header class="w-full h-auto">
+        <nav class="py-[30px] px-[42px] flex items-center justify-between">
+            <!--icon-->
+                <picture class="w-auto">
+                    <source media="(max-width: 960px)" srcset="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logotype-lg-dark.svg">
+                    <img class="h-16" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logo-all-dark.svg" alt="store-icon">
+                </picture>
+            <!-- link -->
+                <ul class="flex gap-[60px] text-[#3F5D45] ml-auto mr-[79px] text-[16px] justify-self-end">
+                   <a href="#"><li>首頁</li></a>
+                   <a href="#"><li>甜點</li></a>
+                   <a href="#"><li>登入</li></a>
+                </ul>
+            <!-- cart -->
+                <a href="#">
+                    <img class="w-[24px]" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/shopping_cart.png?raw=true" alt="shopping_cart">
+                </a>
+            
+        </nav>
+    </header>
+    <main></main>
+    <footer class="w-full h-auto">
+        <!-- footer upper part -->
+        <div class="w-full py-[30px] bg-[#3F5D45] flex justify-center">
+                <div class="w-[780px] flex justify-between">
+                <label for="subscribe" class="flex items-center gap-[20px]">
+                    <img class="w-[40px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logo-light.svg" alt="store-icon-sm">
+                    <h2 class="text-[24px] text-[#EAF0ED]">訂閱你我的甜蜜郵件</h2>
+                </label>
+                <div class="w-[380px] h-[56px] flex items-center justify-between bg-[#EAF0ED]">
+                    <img class="ml-[20px]" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/mail-24px.png?raw=true" alt="mail">
+                    <input id="subscribe" type="email" class="bg-transparent w-[200px] pr-2 rounded text-end focus:outline-none focus:ring-2 focus:ring-[#3F5D45] ">
+                    <div class="w-[64px] h-full bg-[#FFE180] flex justify-center items-center">
+                        <img class="w-[20px]" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_forward-24px.png?raw=true" alt="arrow-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer-lower part -->
+        <div class="w-full bg-[#EAF0ED] py-[30px] flex flex-col items-center">
+            <div  class="w-[780px] flex justify-between">
+                <div class="h-[218.69px] flex flex-col items-start justify-between">
+                    <img class="h-[26.6px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logotype-sm-dark.svg" alt="store-icon">
+                    <ul >
+                        <li><a href="#">07-1234-5678</a></li>
+                        <li><a href="#">sweetaste@email.com</a></li>
+                        <li><a href="#">800 高雄市新興區幸福路 520 號</a></li>
+                    </ul>
+                </div>
+                <img class="h-[218.69px]" src="./src/material/sm-今天是個吃甜點的好日子@2x desktop.png" alt="今天是個吃甜點的好日子">
+            </div>
+
+            <div class="py-[30px] w-[780px] flex justify-between items-center">
+                <ul class=" flex gap-[8px]">
+                    <li>
+                        <a href="#">
+                        <img class="w-[32px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/ic-line%40.svg" alt="line-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img class="w-[32px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/ic-facebook.svg" alt="facebook-icon">
+                        </a>
+                    </li>
+                </ul>
+                <p class="font-times text-[#3F5D45]">© 2018 Sweetaste* All Rights Reserved</p>
+            </div>
+
+        </div>
+    </footer>
+    <script src="./src/script.js"></script>
 </body>
 </html>
