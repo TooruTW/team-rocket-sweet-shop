@@ -562,8 +562,24 @@ video {
   visibility: collapse;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
+}
+
+.ml-\[20px\] {
+  margin-left: 20px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-\[79px\] {
+  margin-right: 79px;
 }
 
 .block {
@@ -586,8 +602,72 @@ video {
   display: none;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
+.h-\[218\.69px\] {
+  height: 218.69px;
+}
+
+.h-\[26\.6px\] {
+  height: 26.6px;
+}
+
+.h-\[56px\] {
+  height: 56px;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-full {
+  height: 100%;
+}
+
 .h-screen {
   height: 100vh;
+}
+
+.w-\[200px\] {
+  width: 200px;
+}
+
+.w-\[20px\] {
+  width: 20px;
+}
+
+.w-\[24px\] {
+  width: 24px;
+}
+
+.w-\[32px\] {
+  width: 32px;
+}
+
+.w-\[380px\] {
+  width: 380px;
+}
+
+.w-\[40px\] {
+  width: 40px;
+}
+
+.w-\[64px\] {
+  width: 64px;
+}
+
+.w-\[780px\] {
+  width: 780px;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .w-screen {
@@ -606,6 +686,14 @@ video {
   resize: both;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
 }
@@ -614,8 +702,55 @@ video {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-\[20px\] {
+  gap: 20px;
+}
+
+.gap-\[23px\] {
+  gap: 23px;
+}
+
+.gap-\[30px\] {
+  gap: 30px;
+}
+
+.gap-\[60px\] {
+  gap: 60px;
+}
+
+.gap-\[8px\] {
+  gap: 8px;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .border {
   border-width: 1px;
+}
+
+.bg-\[\#3F5D45\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 93 69 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#EAF0ED\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 240 237 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#FFE180\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 225 128 / var(--tw-bg-opacity, 1));
 }
 
 .bg-slate-500 {
@@ -623,13 +758,57 @@ video {
   background-color: rgb(100 116 139 / var(--tw-bg-opacity, 1));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
+.px-\[42px\] {
+  padding-left: 42px;
+  padding-right: 42px;
+}
+
+.py-\[30px\] {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.text-end {
+  text-align: end;
+}
+
 .font-pingfang {
   font-family: PingFang TC, Noto Sans TC, Microsoft JhengHei, sans-serif;
+}
+
+.font-times {
+  font-family: Times New Roman, Times, serif;
 }
 
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
+}
+
+.text-\[16px\] {
+  font-size: 16px;
+}
+
+.text-\[24px\] {
+  font-size: 24px;
+}
+
+.text-\[\#3F5D45\] {
+  --tw-text-opacity: 1;
+  color: rgb(63 93 69 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#EAF0ED\] {
+  --tw-text-opacity: 1;
+  color: rgb(234 240 237 / var(--tw-text-opacity, 1));
 }
 
 .underline {
@@ -638,4 +817,115 @@ video {
 
 .outline {
   outline-style: solid;
+}
+
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.backdrop-filter {
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+@media (max-width: 768px) {
+  .rwd-show{
+    display: block;
+  }
+
+  .md-burger-nav-ul{
+    width: 80%;
+    color: #EAF0ED;
+    margin: 0;
+    position: absolute;
+    flex-direction: column;
+    left: 0px;
+    bottom: 100px;
+    gap: 8px;
+    z-index: 5;
+    transform: scale(0);
+    transition: all 0.5s ease;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+
+  .md-burger-nav-ul-show{
+    bottom:-160px;
+    transform: scale(1);
+  }
+
+  .md-header-list{
+    padding-left: 16px;
+    background-color: #3F5D45;
+    font-size: 32px;
+    width: 100%;
+  }
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:ring-\[\#3F5D45\]:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(63 93 69 / var(--tw-ring-opacity, 1));
+}
+
+@media not all and (min-width: 768px) {
+  .max-md\:block {
+    display: block;
+  }
+
+  .max-md\:hidden {
+    display: none;
+  }
+
+  .max-md\:h-\[135px\] {
+    height: 135px;
+  }
+
+  .max-md\:h-\[17\.74px\] {
+    height: 17.74px;
+  }
+
+  .max-md\:w-\[318px\] {
+    width: 318px;
+  }
+
+  .max-md\:w-full {
+    width: 100%;
+  }
+
+  .max-md\:flex-col {
+    flex-direction: column;
+  }
+
+  .max-md\:items-start {
+    align-items: flex-start;
+  }
+
+  .max-md\:px-\[30px\] {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
