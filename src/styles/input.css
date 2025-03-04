@@ -49,6 +49,10 @@
     position: relative;
     z-index: 1;
 }
+.selecd-page{
+    color: white;
+    background-color: #3F5D45;
+}
 
 .gray-short-bg::before{
     position: absolute;
