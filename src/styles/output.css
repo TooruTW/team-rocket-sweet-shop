@@ -578,6 +578,18 @@ video {
   top: 0px;
 }
 
+.right-0 {
+  right: 0px;
+}
+
+.top-\[22px\] {
+  top: 22px;
+}
+
+.right-\[22px\] {
+  right: 22px;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -598,6 +610,11 @@ video {
   margin: 0px;
 }
 
+.my-\[80px\] {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
 .ml-\[20px\] {
   margin-left: 20px;
 }
@@ -612,6 +629,10 @@ video {
 
 .mt-\[-90px\] {
   margin-top: -90px;
+}
+
+.mb-\[30px\] {
+  margin-bottom: 30px;
 }
 
 .block {
@@ -658,6 +679,10 @@ video {
   height: 307px;
 }
 
+.h-\[315px\] {
+  height: 315px;
+}
+
 .h-\[460px\] {
   height: 460px;
 }
@@ -668,6 +693,10 @@ video {
 
 .h-\[56px\] {
   height: 56px;
+}
+
+.h-\[65px\] {
+  height: 65px;
 }
 
 .h-auto {
@@ -690,6 +719,14 @@ video {
   width: 33.333333%;
 }
 
+.w-\[127px\] {
+  width: 127px;
+}
+
+.w-\[173px\] {
+  width: 173px;
+}
+
 .w-\[196px\] {
   width: 196px;
 }
@@ -704,6 +741,10 @@ video {
 
 .w-\[24px\] {
   width: 24px;
+}
+
+.w-\[300px\] {
+  width: 300px;
 }
 
 .w-\[32px\] {
@@ -730,6 +771,10 @@ video {
   width: 780px;
 }
 
+.w-\[90px\] {
+  width: 90px;
+}
+
 .w-auto {
   width: auto;
 }
@@ -747,6 +792,42 @@ video {
   width: 100vw;
 }
 
+.w-\[315px\] {
+  width: 315px;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-2\/5 {
+  width: 40%;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.max-w-\[315px\] {
+  max-width: 315px;
+}
+
+.flex-\[0_0_315px\] {
+  flex: 0 0 315px;
+}
+
+.flex-\[1_1_33\%\] {
+  flex: 1 1 33%;
+}
+
 .border-collapse {
   border-collapse: collapse;
 }
@@ -762,6 +843,14 @@ video {
 
 .resize {
   resize: both;
+}
+
+.snap-x {
+  scroll-snap-type: x var(--tw-scroll-snap-strictness);
+}
+
+.snap-center {
+  scroll-snap-align: center;
 }
 
 .flex-row-reverse {
@@ -828,12 +917,41 @@ video {
   justify-self: end;
 }
 
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
 
 .border {
   border-width: 1px;
+}
+
+.border-l {
+  border-left-width: 1px;
+}
+
+.border-l-\[1px\] {
+  border-left-width: 1px;
+}
+
+.border-r {
+  border-right-width: 1px;
+}
+
+.border-\[\#EAF0ED\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(234 240 237 / var(--tw-border-opacity, 1));
 }
 
 .bg-\[\#3F5D45\] {
@@ -868,6 +986,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
 }
 
 .bg-cream-pie {
@@ -931,8 +1054,17 @@ video {
   padding-bottom: 30px;
 }
 
+.px-\[30px\] {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-end {
@@ -954,6 +1086,10 @@ video {
 
 .text-\[16px\] {
   font-size: 16px;
+}
+
+.text-\[20px\] {
+  font-size: 20px;
 }
 
 .text-\[24px\] {
@@ -1178,6 +1314,27 @@ video {
   z-index: -1;
 }
 
+.card-product{
+  position: relative;
+}
+
+.card-product::before{
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 106.73px;
+  width: 36px;
+  z-index: 20;
+  background: #3F5D45;
+  color:#EAF0ED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 3px;
+  content: "本日精選";
+  writing-mode: vertical-lr;
+}
+
 @media (max-width: 768px) {
   .rwd-show{
     display: block;
@@ -1274,12 +1431,32 @@ video {
     height: auto;
   }
 
+  .max-md\:w-\[226px\] {
+    width: 226px;
+  }
+
   .max-md\:w-\[318px\] {
     width: 318px;
   }
 
   .max-md\:w-full {
     width: 100%;
+  }
+
+  .max-md\:w-\[315px\] {
+    width: 315px;
+  }
+
+  .max-md\:w-\[\] {
+    width: ;
+  }
+
+  .max-md\:w-auto {
+    width: auto;
+  }
+
+  .max-md\:flex-\[0_0_315px\] {
+    flex: 0 0 315px;
   }
 
   .max-md\:flex-col {
@@ -1290,8 +1467,28 @@ video {
     align-items: flex-start;
   }
 
+  .max-md\:justify-around {
+    justify-content: space-around;
+  }
+
+  .max-md\:justify-evenly {
+    justify-content: space-evenly;
+  }
+
   .max-md\:gap-\[30px\] {
     gap: 30px;
+  }
+
+  .max-md\:overflow-scroll {
+    overflow: scroll;
+  }
+
+  .max-md\:overflow-x-auto {
+    overflow-x: auto;
+  }
+
+  .max-md\:overflow-x-scroll {
+    overflow-x: scroll;
   }
 
   .max-md\:object-contain {
@@ -1311,11 +1508,6 @@ video {
   .max-md\:px-\[30px\] {
     padding-left: 30px;
     padding-right: 30px;
-  }
-
-  .max-md\:px-\[\] {
-    padding-left: ;
-    padding-right: ;
   }
 
   .max-md\:text-\[20px\] {
