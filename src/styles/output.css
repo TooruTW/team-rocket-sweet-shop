@@ -1062,6 +1062,10 @@ video {
   font-family: Times New Roman, Times, serif;
 }
 
+.font-helveticaNeue {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
 .text-9xl {
   font-size: 8rem;
   line-height: 1;

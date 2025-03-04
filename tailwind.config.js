@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       fontFamily:{
         pingfang: ['PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', 'sans-serif'],
-        times:['Times New Roman', 'Times', 'serif']
+        times:['Times New Roman', 'Times', 'serif'],
+        helveticaNeue:['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif']
       },
       backgroundImage:{
         'pound-cake': "url('https://bit.ly/2OhbMHr')",
