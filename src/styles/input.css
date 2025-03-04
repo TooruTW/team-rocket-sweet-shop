@@ -60,7 +60,26 @@
     height: 82%;
     z-index: -1;
 }
+.card-product{
+    position: relative;
+}
+.card-product::before{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 106.73px;
+    width: 36px;
+    z-index: 20;
+    background: #3F5D45;
+    color:#EAF0ED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 3px;
+    content: "本日精選";
+    writing-mode: vertical-lr;
 
+}
 
 
 @media (max-width: 768px) {
