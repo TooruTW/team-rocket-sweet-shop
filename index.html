@@ -33,8 +33,103 @@
         </nav>
     </header>
 
-    <main>
+    <main class="flex flex-col w-full h-auto">
+        <!-- 主視覺 -->
+        <section id="main-card" class="py-[30px] px-[42px] flex flex-col items-center max-md:p-0">
 
+            <div id="img-card-player" class="transition-all	duration-500 w-full h-[496px] bg-img-center-cover max-md:h-[227px] max-md:object-contain"></div>
+
+            <div class="w-[780px] h-[256px] max-md:h-[180px] flex gap-[1px] mt-[-90px] bg-white font-semibold text-[#FFFFFF] max-md:m-0 max-md:w-full text-[24px] max-md:text-[20px]">
+
+                <div id="img-card-1" class="bg-macarons-and-coffee blur-card card-selected w-1/3 h-full relative flex justify-center items-center">
+                    <h3 class="tracking-[8px] card-writing-mode-vertical z-30">本日精選</h3></div>
+
+                <div id="img-card-2" class="bg-cream-pie blur-card w-1/3 h-full relative flex justify-center items-center">
+                    <h3 class="tracking-[8px] card-writing-mode-vertical z-30">人氣推薦</h3>
+                </div>
+
+                <div id="img-card-3" class="bg-popsicle blur-card w-1/3 h-full relative flex justify-center items-center">
+                    <h3 class="tracking-[8px] card-writing-mode-vertical z-30">新品上市</h3>
+                </div>
+
+
+            </div>
+        </section>
+        <section id="why-make-sweet" class="gray-short-bg py-[30px] px-[42px] flex items-center justify-between max-md:px-0 max-md:flex-col max-md:gap-[30px]">
+            <img class="hidden w-[196px] max-md:block" src="./src/material/sm-橫式-為什麼選擇了做甜點@2x.png" alt="為什麼選擇了做甜點">
+            <img class="h-[460px] w-[460px] object-cover max-md:h-[250px]" src="https://bit.ly/2xPn7Eq" alt="圓土司">
+            <p class="leading-9 card-poem h-[300px] tracking-tight text-[#8DA291] max-md:h-auto max-md:px-[30px] max-md:tracking-normal">
+                青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
+                <br/>
+                <br/>
+                是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
+            </p>
+            <img class="h-[307px] self-start max-md:hidden" src="./src/material/lg-為什麼選擇了做甜點@2x.png" alt="為什麼選擇了做甜點">
+        </section>
+        <section id="why-eat-sweet" class="gray-short-bg py-[30px] px-[42px] flex flex-row-reverse items-center justify-between max-md:px-0 max-md:flex-col max-md:gap-[30px]">
+            <img class="hidden w-[196px] max-md:block" src="./src/material/sm-橫式-為什麼一定要吃甜點@2x.png" alt="為什麼一定要吃甜點">
+            <img class="h-[460px] w-[460px] object-cover max-md:h-[250px]" src="https://bit.ly/2zzAQS4" alt="米布丁">
+            <img class="h-[307px] self-start max-md:hidden" src="./src/material/lg-為什麼一定要吃甜點@2x.png" alt="為什麼一定要吃甜點">
+            <p class="leading-9 card-poem h-[300px] tracking-tight text-[#8DA291] max-md:h-auto max-md:px-[30px] max-md:tracking-normal">
+                青山依舊在，幾度夕陽紅。慣看秋月春風。一壺濁酒喜相逢，浪花淘盡英雄。是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
+                <br/>
+                <br/>
+                是非成敗轉頭空，滾滾長江東逝水，白髮漁樵江渚上，古今多少事，都付笑談中。
+            </p>
+        </section>
+
+        <section id="no-reason-for-eatting-sweet" class="py-[30px] px-[42px] h-auto w-full flex flex-col items-center max-md:p-0">
+            <picture class="w-[90px] my-[80px] max-md:w-[226px]">
+                <source media="(max-width: 768px)" srcset="./src/material/sm-橫式-想吃甜點是不需要理由的@2x.png">
+                <img src="./src/material/lg-想吃甜點是不需要理由的@2x.png" alt="想吃甜點是不需要理由的">
+            </picture>
+
+            <div id="recommed-today" class="snap-x mb-[30px] flex justify-between w-full gap-[30px] max-md:justify-around max-md:px-[30px] max-md:overflow-x-auto">
+
+                <div class="flex-[1_1_33%] max-md:flex-[0_0_315px] card-product snap-center">
+                    <div class="favorite absolute right-[22px] top-[22px]" >
+                        <svg class="uncheck-heart" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#aa0601"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+                        <svg class="checked-heart hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
+                    </div>
+                    <img class="h-[315px] w-full object-cover product-img" src="https://bit.ly/2zBjQuq" alt="dount">
+                    <h2 class="flex w-full items-center text-[20px] h-[56px]">
+                        <span class="w-3/5 h-full border-l-[1px] border-[#EAF0ED] flex items-center justify-center product-name">焦糖馬卡龍</span>
+                        <span class="w-2/5 h-full border border-[#EAF0ED] flex items-center justify-center product-price">NT$ 450</span>
+                    </h2>
+                    <button class="text-center h-[65px] text-[24px] font-semibold w-full bg-[#EAF0ED]">加入購物車</button>
+                </div>
+
+                <div class="flex-[1_1_33%] max-md:flex-[0_0_315px] card-product snap-center">
+                    <div class="favorite absolute right-[22px] top-[22px]" >
+                        <svg class="uncheck-heart" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#aa0601"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+                        <svg class="checked-heart hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
+                    </div>
+                    <img class="h-[315px] w-full object-cover product-img" src="https://bit.ly/2zBDAxX" alt="dount">
+                    <h2 class="flex w-full items-center text-[20px] h-[56px]">
+                        <span class="w-3/5 h-full border-l-[1px] border-[#EAF0ED] flex items-center justify-center product-name">焦糖馬卡龍</span>
+                        <span class="w-2/5 h-full border border-[#EAF0ED] flex items-center justify-center product-price">NT$ 450</span>
+                    </h2>
+                    <button class="text-center h-[65px] text-[24px] font-semibold w-full bg-[#EAF0ED]">加入購物車</button>
+                </div>
+
+                <div class="flex-[1_1_33%] max-md:flex-[0_0_315px] card-product snap-center">
+                    <div class="favorite absolute right-[22px] top-[22px]" >
+                        <svg class="uncheck-heart" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#aa0601"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+                        <svg class="checked-heart hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
+                    </div>
+                    <img class="h-[315px] w-full object-cover product-img" src="https://bit.ly/2QbVsVR" alt="dount">
+                    <h2 class="flex w-full items-center text-[20px] h-[56px]">
+                        <span class="w-3/5 h-full border-l-[1px] border-[#EAF0ED] flex items-center justify-center product-name">焦糖馬卡龍</span>
+                        <span class="w-2/5 h-full border border-[#EAF0ED] flex items-center justify-center product-price">NT$ 450</span>
+                    </h2>
+                    <button class="text-center h-[65px] text-[24px] font-semibold w-full bg-[#EAF0ED]">加入購物車</button>
+                </div>
+
+                
+
+            </div>
+
+        </section>
     </main>
 
     <footer class="w-full h-auto">
