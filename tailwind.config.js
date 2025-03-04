@@ -12,7 +12,8 @@ module.exports = {
         'pound-cake': "url('https://bit.ly/2OhbMHr')",
         'macarons-and-coffee': "url('https://bit.ly/2R5tqwD')",
         'cream-pie': "url('https://bit.ly/2Dwoxd7')",
-        'popsicle': "url('https://bit.ly/2OUteif')"
+        'popsicle': "url('https://bit.ly/2OUteif')",
+        'cake-white-suger': "url('https://bit.ly/2Qodh3Z')"
       }
       
 
