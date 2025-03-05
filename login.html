@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/output.css">
+    <title>Sweetast</title>
+
+</head>
+<body class="w-full h-auto flex justify-center flex-col font-pingfang text-[#3F5D45]">
+
+    <!-- header -->
+    <header class="w-full h-auto">
+        <nav class="py-[30px] px-[42px] max-md:px-[30px] flex items-center justify-between relative">
+            <!-- nav-burger -->
+             <img id="navBurger" class="hidden max-md:block" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/dehaze-24px.png?raw=true" alt="nav-burger">
+            <!--icon-->
+                <picture class="w-auto">
+                    <source media="(max-width: 768px)" srcset="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logotype-lg-dark.svg">
+                    <img class="h-16 max-md:h-[17.74px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logo-all-dark.svg" alt="store-icon">
+                </picture>
+            <!-- link -->
+                <ul id="headerList" class="flex gap-[60px] text-[#3F5D45] ml-auto mr-[79px] text-[16px] justify-self-end md-burger-nav-ul ">
+                   <a href="#" class="md-header-list"><li>首頁</li></a>
+                   <a href="#" class="md-header-list"><li>甜點</li></a>
+                   <a href="#" class="md-header-list"><li>登入</li></a>
+                </ul>
+            <!-- cart -->
+                <a href="#">
+                    <img class="w-[24px]" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/shopping_cart.png?raw=true" alt="shopping_cart">
+                </a>
+            
+        </nav>
+    </header>
+    
+    <main>
+        <section class="flex justify-center items-center m-[60px] max-md:m-0">
+            <div class="bg-[#3F5D45] w-[390px] flex flex-col justify-between text-[#EAF0ED]">
+
+                <h1 class="text-[36px] text-center py-[40px] max-md:py-[30px]">會員登入</h1>
+
+                <div class="hidden max-md:flex h-[116px] justify-center items-center p-[30px] mb-[30px] bg-[#EAF0ED]">
+                    <div class="w-1/3 h-full flex justify-center items-center bg-[#FFFFFF]">
+                        <img class="w-[83.4px]" src="./src/material/ic-facebook-logotype@2x.png" alt="facebooklogo">
+                    </div>
+                    <div class="w-1/3 h-full flex justify-center items-center bg-[#FFFFFF]">
+                        <img class="w-[72.64px]" src="./src/material/ic-google@2x.png" alt="googlelogo">
+                    </div>
+                    <div class="w-1/3 h-full flex justify-center items-center bg-[#FFFFFF]">
+                        <img class="w-[74.41px]" src="./src/material/ic-yahoo@2x.png" alt="yahoologo">
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-[16px] mx-[30px] ">
+                    
+                    <div class="h-[56px] w-full flex items-center px-[20px] gap-[20px] bg-[#EAF0ED]">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
+                        <input class=" w-full h-4/5 bg-transparent rounded text-end focus:outline-none focus:ring-2 focus:ring-[#3F5D45] text-[#3F5D45] pr-[20px]" type="text" required>
+                    </div>
+
+                    <div class="h-[56px] w-full flex items-center px-[20px] gap-[20px] bg-[#EAF0ED]">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M280-240q-100 0-170-70T40-480q0-100 70-170t170-70q81 0 141.5 45.5T506-560h414v160h-80v160H680v-160H506q-24 69-84.5 114.5T280-240Zm0-160q33 0 56.5-23.5T360-480q0-33-23.5-56.5T280-560q-33 0-56.5 23.5T200-480q0 33 23.5 56.5T280-400Z"/></svg>                        <input class=" w-full h-4/5 bg-transparent rounded text-end focus:outline-none focus:ring-2 focus:ring-[#3F5D45] text-[#3F5D45] pr-[20px]" type="text" required>
+                    </div>
+
+                    <div class="flex items-center gap-[8px] h-[16px] p-0 mb-[25px]">
+                        <input id="remenberMe" class="w-[16px] h-full" type="checkbox">
+                        <label for="remenberMe" class="text-[16px]">記住我</label>
+                    </div>
+                </div>
+                
+                <button class="justify-self-end	bg-[#FFE180] h-[65px] w-full text-[#3F5D45] text-[24px] font-semibold">登入帳號</button>
+            </div>
+
+            <div class="w-[390px] h-[350px] bg-[#EAF0ED] flex flex-col justify-between py-[40px] px-[30px] max-md:hidden">
+                <h2 class="text-center text-[24px] font-light">—— 連結社群帳號 ——</h2>
+                <div class="flex flex-col gap-[16px]">
+                    <div class="h-[56px] flex justify-center items-center bg-[#FFFFFF]">
+                        <img class="h-[20.37px]" src="./src/material/ic-facebook-logotype@2x.png" alt="facebooklogo">
+                    </div>
+                    <div class="h-[56px] flex justify-center items-center bg-[#FFFFFF]">
+                        <img class="h-[31.01px]" src="./src/material/ic-google@2x.png" alt="googlelogo">
+                    </div>
+                    <div class="h-[56px] flex justify-center items-center bg-[#FFFFFF]">
+                        <img class="h-[20.28px]" src="./src/material/ic-yahoo@2x.png" alt="yahoologo">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full h-auto">
+        <!-- footer upper part -->
+        <div class="w-full py-[30px] bg-[#3F5D45] flex justify-center">
+
+                <div class="w-[780px] flex justify-between items-center gap-[30px] max-md:flex-col ">
+
+                <label for="subscribe" class="flex items-center gap-[20px]">
+                    <img class="w-[40px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logo-light.svg" alt="store-icon-sm">
+                    <h2 class="text-[24px] font-helveticaNeue text-[#EAF0ED]">訂閱你我的甜蜜郵件</h2>
+                </label>
+
+                <div class="w-[380px] h-[56px] flex items-center justify-between bg-[#EAF0ED] max-md:w-[318px]">
+                    <img class="ml-[20px]" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/mail-24px.png?raw=true" alt="mail">
+                    <input id="subscribe" type="email" class="bg-transparent w-[200px] pr-2 rounded text-end focus:outline-none focus:ring-2 focus:ring-[#3F5D45] ">
+                    <div class="w-[64px] h-full bg-[#FFE180] flex justify-center items-center">
+                        <img class="w-[20px]" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_forward-24px.png?raw=true" alt="arrow-right">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- footer-lower part -->
+        <div class="w-full bg-[#EAF0ED] py-[30px] flex flex-col items-center">
+            <div  class="w-[780px] flex justify-between max-md:w-full max-md:px-[30px]">
+                <div class="h-[218.69px] flex flex-col items-start justify-between max-md:h-[135px]">
+                    <img class="h-[26.6px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logotype-sm-dark.svg" alt="store-icon">
+                    <ul class="font-helveticaNeue">
+                        <li><a href="#">07-1234-5678</a></li>
+                        <li><a href="#">sweetaste@email.com</a></li>
+                        <li><a href="#">800 高雄市新興區幸福路 520 號</a></li>
+                    </ul>
+                </div>
+                <img class="h-[218.69px] max-md:hidden" src="./src/material/sm-今天是個吃甜點的好日子@2x desktop.png" alt="今天是個吃甜點的好日子">
+            </div>
+
+            <div class="py-[30px] w-[780px] flex justify-between items-center gap-[23px] max-md:flex-col max-md:items-start max-md:w-full max-md:px-[30px]">
+                <ul class=" flex gap-[8px]">
+                    <li>
+                        <a href="#">
+                        <img class="w-[32px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/ic-line%40.svg" alt="line-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img class="w-[32px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/ic-facebook.svg" alt="facebook-icon">
+                        </a>
+                    </li>
+                </ul>
+                <p class="font-times text-[#3F5D45]">© 2018 Sweetaste* All Rights Reserved</p>
+            </div>
+
+        </div>
+    </footer>
+    <script src="./src/script.js"></script>
+</body>
+</html>
