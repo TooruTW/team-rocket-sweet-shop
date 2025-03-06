@@ -2,7 +2,6 @@
 const navBurger = document.querySelector("#navBurger")
 const headerList = document.querySelector("#headerList")
 
-
 //elements mainpage
 const currentOsusume = document.querySelector("#img-card-player")
 let currentOsusumeIndex = 0
@@ -11,7 +10,6 @@ const osusumes = document.querySelectorAll(".blur-card")
 
 // elements page-product-card-container
 const pageProductCardContainer = document.querySelector(".page-product-card-container")
-
 
 // library
 const osusumeContainer = [
@@ -41,7 +39,7 @@ const products = [
         price: 450,
         favorite: false,
         buy: 0,
-        imgUrl: "https://bit.ly/2zBDAxX"
+        imgUrl: "https://bit.ly/2zKOP7w"
     },
     {   id: 3,
         name: "焦糖蘋果千層",
@@ -109,6 +107,29 @@ const products = [
     
 ]
 
+let cartItems = [ 
+{   id: 0,
+    name: "水果西米露奶酪",
+    price: 450,
+    favorite: false,
+    buy: 0,
+    imgUrl: "https://bit.ly/2QiWeQW"
+},
+{   id: 1,
+    name: "原味甜甜圈",
+    price: 450,
+    favorite: false,
+    buy: 0,
+    imgUrl: "https://bit.ly/2zBjQuq"
+},
+{   id: 2,
+    name: "藍莓派",
+    price: 450,
+    favorite: false,
+    buy: 0,
+    imgUrl: "https://bit.ly/2zKOP7w"
+}]
+
 // elements mainpage product card
 const mainPageProductCards = document.querySelectorAll(".favorite")
 
@@ -129,7 +150,6 @@ slideChange()
 //  filter change & osusume change
 osusumes.forEach((element,index) => {
    element.addEventListener("click", ()=>{
-    console.log(index,"got clicked")
     osusumes.forEach(element=>{
         element.classList.remove("card-selected")
     })
@@ -142,12 +162,21 @@ osusumes.forEach((element,index) => {
 const recommedThisDay = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const ninnki = [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27];
 const atarashi = [6, 11, 13, 14, 16, 18, 20, 22, 23, 26, 28, 30];
-document.querySelector("#recommed-this-day").innerText = `${recommedThisDay.length}`
-document.querySelector("#all-procudt").innerText = `${products.length}`
-document.querySelector("#ninnki").innerText = `${ninnki.length}`
-document.querySelector("#atarashi").innerText = `${atarashi.length}`
 
+const menuOsusume = document.querySelector("#recommed-this-day")
+menuOsusume? menuOsusume.innerText = `${recommedThisDay.length}`:null;
 
+const menuAll = document.querySelector("#all-procudt")
+menuAll? menuAll.innerText = `${products.length}`:null;
+
+const menuNinnki = document.querySelector("#ninnki")
+menuNinnki? menuNinnki.innerText = `${ninnki.length}`:null;
+
+const menuAtarashi = document.querySelector("#atarashi")
+menuAtarashi? menuAtarashi.innerText = `${atarashi.length}`:null;
+
+// product page rendering
+if(pageProductCardContainer){
 for (let i = 0; i <= 5; i++) {
     const item = products[i]
     pageProductCardContainer.innerHTML += `
@@ -161,13 +190,15 @@ for (let i = 0; i <= 5; i++) {
                         <span class="w-3/5 h-full border-l-[1px] border-[#EAF0ED] flex items-center justify-center product-name">${item.name}</span>
                         <span class="w-2/5 h-full border border-[#EAF0ED] flex items-center justify-center product-price">NT$ ${item.price}</span>
                     </h2>
-                    <button class="text-center h-[65px] text-[24px] font-semibold w-full bg-[#EAF0ED]">加入購物車</button>
+                    <button id=${item.name} class="add-to-cart text-center h-[65px] text-[24px] font-semibold w-full bg-[#EAF0ED]">加入購物車</button>
                 </div>
     `
+}
 }
 
 
 // pooduct card
+// favorites
 const favorites = document.querySelectorAll(".favorite")
 
 favorites.forEach(element => {
@@ -177,3 +208,86 @@ favorites.forEach(element => {
         element.children[1].classList.toggle("hidden")
     })
 })
+// add to cart
+const addToCart = document.querySelectorAll(".add-to-cart")
+
+addToCart.forEach(item =>{
+
+    item.addEventListener('click',(item)=>{
+        let productName = item.target.id
+        let procudtInfo = products.find(item => item.name === productName)
+        console.log(procudtInfo)
+
+        if(cartItems.includes(procudtInfo)){
+            let indexOfitem = cartItems.findIndex( item => item === procudtInfo)
+            cartItems[indexOfitem].buy ++
+            
+            console.log("already in da cart", indexOfitem, cartItems[indexOfitem].buy)
+        }else{
+            cartItems.push(procudtInfo)
+            console.log("add to cart")
+        }
+        console.log(cartItems)
+    })
+})
+
+// cart
+// buying list
+const listContainer = document.querySelector("#card-buy-container")
+const listTemplate = document.querySelector("#list-template")
+
+function updateBill(transportFee){
+    let sum = 0
+    cartItems.forEach(item => {
+        sum += item.buy * item.price
+    })
+    document.querySelector("#sum").textContent = sum
+    document.querySelector("#transport-fee").textContent = transportFee
+    document.querySelector("#total").textContent = sum + transportFee
+}
+
+function updateCart(card){
+        let existingItem = document.querySelector(`#${card.name}`);
+        if (existingItem) {
+            existingItem.remove();
+        }
+
+        const clone = listTemplate.content.cloneNode(true)
+        clone.querySelector("#product-templete").style.order = card.id
+        clone.querySelector("#product-templete").id =card.name
+        clone.querySelector(".img-of-product").src = card.imgUrl
+        clone.querySelector(".name-of-product").textContent = card.name
+        clone.querySelector(".price-of-product").textContent = card.price
+        clone.querySelector(".num").textContent = card.buy
+        clone.querySelector(".unit-total").textContent = card.buy * card.price
+
+        // eventlistener to in&decresase
+        clone.querySelector(".decrese").addEventListener("click", ()=>{
+            card.buy = card.buy > 0 ? card.buy -1 : 0;
+            updateCart(card)
+            updateBill(300)
+            console.log(card.name,card.buy,"decrease")
+        })
+        clone.querySelector(".increase").addEventListener("click", ()=>{
+            card.buy ++
+            updateCart(card)
+            updateBill(300)
+            console.log(card.name,card.buy,"increase")
+        })
+        clone.querySelector(".delete-product").addEventListener("click", ()=>{
+            document.querySelector(`#${card.name}`).remove()
+            updateBill(300)
+        })
+
+        listContainer.appendChild(clone)
+}
+
+cartItems.forEach((item) => {
+    updateCart(item)
+})
+
+updateBill(300)
+
+
+
+// bill create

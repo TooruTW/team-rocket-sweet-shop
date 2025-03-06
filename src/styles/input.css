@@ -67,7 +67,7 @@
 .card-product{
     position: relative;
 }
-.card-product::before{
+.today-osusume::before{
     position: absolute;
     top: 0;
     left: 20px;
@@ -82,7 +82,6 @@
     letter-spacing: 3px;
     content: "本日精選";
     writing-mode: vertical-lr;
-
 }
 
 
