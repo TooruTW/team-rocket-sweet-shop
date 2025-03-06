@@ -128,7 +128,21 @@ let cartItems = [
     favorite: false,
     buy: 0,
     imgUrl: "https://bit.ly/2zKOP7w"
-}]
+},   {   id: 4,
+    name: "覆盆子海綿蛋糕",
+    price: 450,
+    favorite: false,
+    buy: 0,
+    imgUrl: "https://bit.ly/2zBDAxX"
+},
+{   id: 5,
+    name: "草莓冰淇淋",
+    price: 450,
+    favorite: false,
+    buy: 0,
+    imgUrl: "https://bit.ly/2zL5jN7"
+}
+]
 
 // elements mainpage product card
 const mainPageProductCards = document.querySelectorAll(".favorite")
@@ -164,22 +178,25 @@ const ninnki = [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 
 const atarashi = [6, 11, 13, 14, 16, 18, 20, 22, 23, 26, 28, 30];
 
 const menuOsusume = document.querySelector("#recommed-this-day")
-menuOsusume? menuOsusume.innerText = `${recommedThisDay.length}`:null;
+menuOsusume ? menuOsusume.innerText = `${recommedThisDay.length}`:null;
 
 const menuAll = document.querySelector("#all-procudt")
-menuAll? menuAll.innerText = `${products.length}`:null;
+menuAll ? menuAll.innerText = `${products.length}`:null;
 
 const menuNinnki = document.querySelector("#ninnki")
-menuNinnki? menuNinnki.innerText = `${ninnki.length}`:null;
+menuNinnki ? menuNinnki.innerText = `${ninnki.length}`:null;
 
 const menuAtarashi = document.querySelector("#atarashi")
-menuAtarashi? menuAtarashi.innerText = `${atarashi.length}`:null;
+menuAtarashi ? menuAtarashi.innerText = `${atarashi.length}`:null;
 
 // product page rendering
+let currentPageNum = 0
+
 if(pageProductCardContainer){
-for (let i = 0; i <= 5; i++) {
+for (let i = currentPageNum + 0; i <= currentPageNum + 5; i++) {
     const item = products[i]
-    pageProductCardContainer.innerHTML += `
+    pageProductCardContainer.innerHTML += 
+                `
                 <div class="card-product w-[49%] mb-[20px] max-md:w-full">
                     <div class="favorite absolute right-[22px] top-[22px]" >
                         <svg class="uncheck-heart" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#aa0601"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
@@ -191,8 +208,7 @@ for (let i = 0; i <= 5; i++) {
                         <span class="w-2/5 h-full border border-[#EAF0ED] flex items-center justify-center product-price">NT$ ${item.price}</span>
                     </h2>
                     <button id=${item.name} class="add-to-cart text-center h-[65px] text-[24px] font-semibold w-full bg-[#EAF0ED]">加入購物車</button>
-                </div>
-    `
+                </div>`
 }
 }
 
@@ -241,6 +257,7 @@ function updateBill(transportFee){
     cartItems.forEach(item => {
         sum += item.buy * item.price
     })
+    transportFee = sum > 0 ? ( sum < 1000 ? 300 : 50 ) : 0 ;
     document.querySelector("#sum").textContent = sum
     document.querySelector("#transport-fee").textContent = transportFee
     document.querySelector("#total").textContent = sum + transportFee
@@ -251,7 +268,6 @@ function updateCart(card){
         if (existingItem) {
             existingItem.remove();
         }
-
         const clone = listTemplate.content.cloneNode(true)
         clone.querySelector("#product-templete").style.order = card.id
         clone.querySelector("#product-templete").id =card.name
@@ -283,11 +299,35 @@ function updateCart(card){
 }
 
 cartItems.forEach((item) => {
+    if(!listContainer) return
     updateCart(item)
 })
 
-updateBill(300)
+listContainer ? updateBill(300) : null ;
 
 
 
 // bill create
+// change status color
+// document.documentElement.style.setProperty('--paymentstep-0', '#8DA291');  
+// document.documentElement.style.setProperty('--paymentstep-1', '#EAF0ED');  
+
+const confirmList = document.querySelector("#confirm-list")
+const confirmCardTemplete = document.querySelector(".confirm-card-templete")
+
+function updateConfirmList(card){
+    
+    const clone = confirmCardTemplete.content.cloneNode(true)
+    clone.querySelector(".img-confirm").src = card.imgUrl;
+    clone.querySelector(".name-confirm").textContent = card.name;
+    clone.querySelector(".num-confirm").textContent = card.buy;
+    clone.querySelector(".price-confirm").textContent = card.buy * card.price;
+
+    confirmList.appendChild(clone)
+   
+}
+
+cartItems.forEach((item) => {
+    if(!confirmList) return
+    updateConfirmList(item)
+})

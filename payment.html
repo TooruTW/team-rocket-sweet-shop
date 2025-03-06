@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/output.css">
+    <title>Sweetast</title>
+
+</head>
+<body class="w-full h-auto flex justify-center flex-col font-pingfang text-[#3F5D45]">
+
+    <!-- header -->
+    <header class="w-full h-auto">
+        <nav class="py-[30px] px-[42px] max-md:px-[30px] flex items-center justify-between relative">
+            <!-- nav-burger -->
+             <img id="navBurger" class="hidden max-md:block" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/dehaze-24px.png?raw=true" alt="nav-burger">
+            <!--icon-->
+                <picture class="w-auto">
+                    <source media="(max-width: 768px)" srcset="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logotype-lg-dark.svg">
+                    <img class="h-16 max-md:h-[17.74px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logo-all-dark.svg" alt="store-icon">
+                </picture>
+            <!-- link -->
+                <ul id="headerList" class="flex gap-[60px] text-[#3F5D45] ml-auto mr-[79px] text-[16px] justify-self-end md-burger-nav-ul ">
+                   <a href="./index.html" class="md-header-list"><li>首頁</li></a>
+                   <a href="./product.html" class="md-header-list"><li>甜點</li></a>
+                   <a href="./login.html" class="md-header-list"><li>登入</li></a>
+                </ul>
+            <!-- cart -->
+                <a href="./cart.html">
+                    <img class="w-[24px]" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/shopping_cart.png?raw=true" alt="shopping_cart">
+                </a>
+            
+        </nav>
+    </header>
+    
+    <main>
+        <section class="py-[30px]  flex justify-center gap-[20px] max-md:p-0 max-md:flex-col">
+            <!-- col left -->
+        <div>
+            <div class="w-[460px]  bg-[#3F5D45] text-[#EAF0ED] px-[40px] py-[30px]">
+                <div class="flex justify-between items-center mb-[30px]">
+                    <h1 class="text-[36px] font-semibold">運送</h1>
+                    <div class="w-[186px] payment-status flex justify-between">
+                        <div class="status-dot-current w-[20px] h-[20px] border bg-[#3F5D45] z-10 border-[#EAF0ED] rounded-full text-[12px] flex justify-center items-center">✓</div>
+                        <div class="status-dot-next w-[20px] h-[20px] border bg-[#3F5D45] z-10 border-[#EAF0ED] rounded-full text-[12px] flex justify-center items-center">✓</div>
+                        <div class="status-dot-next w-[20px] h-[20px] border bg-[#3F5D45] z-10 border-[#EAF0ED] rounded-full text-[12px] flex justify-center items-center">✓</div>
+                    </div>
+                </div>
+
+                <div class="user-info h-fit text-[20px] font-semibold flex flex-col gap-[16px]">
+
+                    <div id="full-name" class="flex gap-[8px]">
+                        <div>
+                            <h2 class="mb-[8px]">姓氏</h2>
+                            <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="王" type="text" name="" id="">
+                        </div>
+                        <div>
+                            <h2 class="mb-[8px]">名字</h2>
+                            <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="小明" type="text" name="" id="">
+                        </div>
+                    </div>
+                    <div id="tel">
+                        <h2 class="mb-[8px]">電話</h2>
+                        <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="0912-345-678" type="tel" name="" id="">
+                    </div>
+                    <div id="address" class="h-auto flex flex-col">
+                        <h2 class="mb-[8px]">地址</h2>
+                        <div class="w-full flex gap-[8px] mb-[8px]">
+                            <div class="select-box w-full text-[#8DA291] h-[56px] text-[16px] font-light">
+                            <select class="appearance-none w-full h-full px-[20px]" name="city" id="city">
+                                <option value="高雄市">高雄市</option>
+                            </select>
+                            </div>
+                            <div class="select-box w-full text-[#8DA291] h-[56px] text-[16px] font-light">
+                            <select class="appearance-none w-full h-full px-[20px]" name="zone" id="zone">
+                                <option value="新興區">新興區</option>
+                            </select>
+                            </div>
+                        </div>
+                        <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="幸福路 520 號" type="text" name="" id="">
+                    </div>
+                </div>
+
+                <div class="paying hidden">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="recipt hidden">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <a href="#">
+                    <button class="text-[24px] font-semibold w-full py-[19px] bg-[#FFE180] text-[#3F5D45]">下一步</button>
+                </a>
+            </div>
+        </div>
+            <!-- col right -->
+            <div class="w-[300px] h-auto flex flex-col gap-[20px]">
+
+                    <div class="flex flex-col border border-[#EAF0ED] text-[#8DA291] max-md:p-0 max-md:mx-[30px]">
+                        <h2 class="text-[24px] font-semibold text-center  bg-[#EAF0ED] max-md:bg-[#EAF0ED] py-[16px]">訂單摘要</h2>
+                        <div class="px-[20px] py-[16px]">
+                        <p class="flex justify-between font-light ">
+                            <span>小計</span>
+                            <span>NT$ <span id="sum">2,700</span></span>
+                        </p>
+                        <p class="flex justify-between font-light my-[8px]">
+                            <span>運費</span>
+                            <span>NT$ <span id="transport-fee">300</span></span>
+                        </p>
+                        <h3 class="flex justify-between mt-[8px] text-[20px] font-semibold">
+                            <span>總計</span>
+                            <span>NT$ <span id="total">3,000</span></span>
+                        </h3>
+                        </div>
+                    </div>
+                
+                <div class="flex flex-col border border-[#EAF0ED] text-[#8DA291] max-md:p-0 max-md:mx-[30px]">
+                    <h2 class="text-[24px] font-semibold text-center  bg-[#EAF0ED] max-md:bg-[#EAF0ED] py-[16px]">購物清單</h2>
+                    <div id="confirm-list" class="flex flex-col h-[280px] overflow-y-scroll px-[20px] my-[16px] gap-[16px] confirm-list">
+                        <template class="confirm-card-templete">
+                            <div class="confirm-card flex gap-[20px] items-center">
+                                <img class="min-w-[120px] h-[80px] object-cover img-confirm" src="https://bit.ly/2QvsT63" alt="">
+                                <div>
+                                    <p class="text-[16px] font-light"> <span class="name-confirm ">焦糖馬卡龍</span> - <span class="num-confirm">2</span></p>
+                                    <h3>NT $ <span class="price-confirm text-[20px] font-semibold">900</span></h3>
+                                </div>
+                            </div>
+                        </template>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full h-auto">
+        <!-- footer upper part -->
+        <div class="w-full py-[30px] bg-[#3F5D45] flex justify-center">
+
+                <div class="w-[780px] flex justify-between items-center gap-[30px] max-md:flex-col ">
+
+                <label for="subscribe" class="flex items-center gap-[20px]">
+                    <img class="w-[40px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logo-light.svg" alt="store-icon-sm">
+                    <h2 class="text-[24px] font-helveticaNeue text-[#EAF0ED]">訂閱你我的甜蜜郵件</h2>
+                </label>
+
+                <div class="w-[380px] h-[56px] flex items-center justify-between bg-[#EAF0ED] max-md:w-[318px]">
+                    <img class="ml-[20px]" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/mail-24px.png?raw=true" alt="mail">
+                    <input id="subscribe" type="email" class="bg-transparent w-[200px] pr-2 rounded text-end focus:outline-none focus:ring-2 focus:ring-[#3F5D45] ">
+                    <div class="w-[64px] h-full bg-[#FFE180] flex justify-center items-center">
+                        <img class="w-[20px]" src="https://github.com/hexschool/webLayoutTraining1st/blob/master/student-week1/arrow_forward-24px.png?raw=true" alt="arrow-right">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- footer-lower part -->
+        <div class="w-full bg-[#EAF0ED] py-[30px] flex flex-col items-center">
+            <div  class="w-[780px] flex justify-between max-md:w-full max-md:px-[30px]">
+                <div class="h-[218.69px] flex flex-col items-start justify-between max-md:h-[135px]">
+                    <img class="h-[26.6px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/logotype-sm-dark.svg" alt="store-icon">
+                    <ul class="font-helveticaNeue">
+                        <li><a href="#">07-1234-5678</a></li>
+                        <li><a href="#">sweetaste@email.com</a></li>
+                        <li><a href="#">800 高雄市新興區幸福路 520 號</a></li>
+                    </ul>
+                </div>
+                <img class="h-[218.69px] max-md:hidden" src="./src/material/sm-今天是個吃甜點的好日子@2x desktop.png" alt="今天是個吃甜點的好日子">
+            </div>
+
+            <div class="py-[30px] w-[780px] flex justify-between items-center gap-[23px] max-md:flex-col max-md:items-start max-md:w-full max-md:px-[30px]">
+                <ul class=" flex gap-[8px]">
+                    <li>
+                        <a href="#">
+                        <img class="w-[32px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/ic-line%40.svg" alt="line-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <img class="w-[32px]" src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/student-week1/ic-facebook.svg" alt="facebook-icon">
+                        </a>
+                    </li>
+                </ul>
+                <p class="font-times text-[#3F5D45]">© 2018 Sweetaste* All Rights Reserved</p>
+            </div>
+
+        </div>
+    </footer>
+    <script src="./src/script.js"></script>
+</body>
+</html>
