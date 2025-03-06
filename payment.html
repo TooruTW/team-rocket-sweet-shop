@@ -36,24 +36,27 @@
     <main>
         <section class="py-[30px]  flex justify-center gap-[20px] max-md:p-0 max-md:flex-col">
             <!-- col left -->
+             
         <div>
             <div class="w-[460px]  bg-[#3F5D45] text-[#EAF0ED] px-[40px] py-[30px] max-md:w-full max-md:px-[30px]">
                 <div class="flex justify-between items-center mb-[30px]">
-                    <h1 class="text-[36px] font-semibold">運送</h1>
-                    <div class="w-[186px] payment-status flex justify-between">
-                        <div class="status-dot-current w-[20px] h-[20px] border bg-[#3F5D45] z-10 border-[#EAF0ED] rounded-full text-[12px] flex justify-center items-center">✓</div>
-                        <div class="status-dot-next w-[20px] h-[20px] border bg-[#3F5D45] z-10 border-[#EAF0ED] rounded-full text-[12px] flex justify-center items-center">✓</div>
-                        <div class="status-dot-next w-[20px] h-[20px] border bg-[#3F5D45] z-10 border-[#EAF0ED] rounded-full text-[12px] flex justify-center items-center">✓</div>
+                    <h1 id="current-payment-status" class="text-[36px] font-semibold">運送</h1>
+                    <div id="payment-status" class="payment-status w-[186px] flex justify-between">
+                        <div class="step w-[20px] h-[20px] border bg-[#3F5D45] z-10 border-[#EAF0ED] rounded-full text-[12px] flex justify-center items-center">✓</div>
+                        <div class="step w-[20px] h-[20px] border bg-[#3F5D45] z-10 border-[#EAF0ED] rounded-full text-[12px] flex justify-center items-center">✓</div>
+                        <div class="step w-[20px] h-[20px] border bg-[#3F5D45] z-10 border-[#EAF0ED] rounded-full text-[12px] flex justify-center items-center">✓</div>
                     </div>
                 </div>
 
-                <div class="user-info h-fit text-[20px] font-semibold flex flex-col gap-[16px]">
+                <div id="user-info" class="input-zone h-fit text-[20px] font-semibold  flex-col gap-[16px] ">
 
                     <div id="full-name" class="flex gap-[8px]">
-                        <div>
+
+                        <div class="full-name">
                             <h2 class="mb-[8px]">姓氏</h2>
                             <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="王" type="text" name="" id="">
                         </div>
+
                         <div>
                             <h2 class="mb-[8px]">名字</h2>
                             <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="小明" type="text" name="" id="">
@@ -79,26 +82,102 @@
                         </div>
                         <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="幸福路 520 號" type="text" name="" id="">
                     </div>
+
                 </div>
 
-                <div class="paying hidden">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div id="paying" class="input-zone h-fit text-[20px] font-semibold  flex-col gap-[16px] ">
+                    <div class="w-full relative">
+                        <h2 class="mb-[8px]">信用卡卡號</h2>
+                        <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="9012-3456-7890-1234" type="text" name="crait-card-num" id="crait-card-num">
+                        <svg class="absolute right-[20px] bottom-[16px]" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#3F5D45"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                    </div>
+
+                    <div id="crait-card-name" class="flex flex-col">
+                            <h2 class="mb-[8px]">持卡人姓名</h2>
+                            <div class="flex gap-[8px]">
+                            <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="王" type="text" name="" id="">
+                            <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="小明" type="text" name="" id="">
+                            </div>
+                    </div>
+
+                    <div id="date" class="h-auto flex flex-col">
+                        <h2 class="mb-[8px]">有效期限</h2>
+                        <div class="w-full flex gap-[8px] mb-[8px]">
+                            <div class="select-box w-full text-[#8DA291] h-[56px] text-[16px] font-light">
+                            <select class="appearance-none w-full h-full px-[20px]" name="month" id="month">
+                                <option value="月">月</option>
+                            </select>
+                            </div>
+                            <div class="select-box w-full text-[#8DA291] h-[56px] text-[16px] font-light">
+                            <select class="appearance-none w-full h-full px-[20px]" name="year" id="year">
+                                <option value="年">年</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="crait-card-svc" class="flex flex-col">
+                        <h2 class="mb-[8px]">背面末三碼</h2>
+                        <div class="flex gap-[8px]">
+                            <input class="text-[#3F5D45] w-full h-[56px] text-[16px] font-light px-[20px]" placeholder="123" type="number" name="crait-card-svg" id="crait-card-svg">
+                            <div class="text-[#3F5D45] w-full h-[56px] px-[20px]"></div>
+                        </div>
+                      
+                    </div>
+                    
                 </div>
-                <div class="recipt hidden">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+
+                <div id="recipt" class="input-zone h-fit text-[20px] font-semibold  flex-col gap-[16px] ">
+                    <div class="flex border border-[#EAF0ED] h-[56px] w-full">
+                        <h2 id="e-recipt" class="w-full flex justify-center items-center text-[20px] font-semibold recipt-select">電子發票</h2>
+                        <h2 id="t-recipt" class="w-full flex justify-center items-center text-[20px] font-semibold">郵寄發票</h2>
+                    </div>
+
+                    <div class="flex flex-col gap-[16px] e-recipt">
+                        <div id="e-adress">
+                            <h2 class="mb-[8px]">電子郵件信箱</h2>
+                            <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="example@email.com" type="email" name="email" id="email">
+                        </div>
+                        <div id="company-code">
+                            <h2 class="mb-[8px]">統一編號（選填）</h2>
+                            <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="12345678" type="number" name="company-code" id="company-code">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-[16px] t-recipt hidden">
+
+                        <div id="address-recipt" class="h-auto flex flex-col">
+                            <h2 class="mb-[8px]">地址</h2>
+                            <div class="w-full flex gap-[8px] mb-[8px]">
+                                <div class="select-box w-full text-[#8DA291] h-[56px] text-[16px] font-light">
+                                <select class="appearance-none w-full h-full px-[20px]" name="city" id="city">
+                                    <option value="高雄市">高雄市</option>
+                                </select>
+                                </div>
+                                <div class="select-box w-full text-[#8DA291] h-[56px] text-[16px] font-light">
+                                <select class="appearance-none w-full h-full px-[20px]" name="zone" id="zone">
+                                    <option value="新興區">新興區</option>
+                                </select>
+                                </div>
+                            </div>
+                            <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="幸福路 520 號" type="text" name="" id="">
+                        </div>
+
+                        <div id="company-code">
+                            <h2 class="mb-[8px]">統一編號（選填）</h2>
+                            <input class="w-full text-[#3F5D45] h-[56px] text-[16px] font-light px-[20px]" placeholder="12345678" type="number" name="company-code" id="company-code">
+                        </div>
+                    </div>
                 </div>
+
             </div>
             <div>
                 <a href="#">
-                    <button class="text-[24px] font-semibold w-full py-[19px] bg-[#FFE180] text-[#3F5D45]">下一步</button>
+                    <button id="btn-next" class="text-[24px] font-semibold w-full py-[19px] bg-[#FFE180] text-[#3F5D45]">下一步</button>
                 </a>
             </div>
         </div>
+
             <!-- col right -->
             <div class="w-[300px] h-auto flex flex-col gap-[20px] max-md:w-full max-md:flex-col">
 

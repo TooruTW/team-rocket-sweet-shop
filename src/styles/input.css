@@ -104,6 +104,7 @@
     top: 50%;
     z-index: 0;
 }
+
 .status-dot-done{
     border-color: #EAF0ED;
     color: black;
@@ -136,6 +137,8 @@
     color: #3F5D45;
     background-color: #3F5D45;
 }
+
+
 .select-box{
     appearance: none;
     position: relative;
@@ -164,6 +167,10 @@
     position: absolute;
     right: 20px;
     z-index: 10;
+}
+.recipt-select{
+    color: #3F5D45;
+    background-color: #EAF0ED;
 }
 
 
