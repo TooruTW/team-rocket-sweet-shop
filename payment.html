@@ -37,7 +37,7 @@
         <section class="py-[30px]  flex justify-center gap-[20px] max-md:p-0 max-md:flex-col">
             <!-- col left -->
         <div>
-            <div class="w-[460px]  bg-[#3F5D45] text-[#EAF0ED] px-[40px] py-[30px]">
+            <div class="w-[460px]  bg-[#3F5D45] text-[#EAF0ED] px-[40px] py-[30px] max-md:w-full max-md:px-[30px]">
                 <div class="flex justify-between items-center mb-[30px]">
                     <h1 class="text-[36px] font-semibold">運送</h1>
                     <div class="w-[186px] payment-status flex justify-between">
@@ -100,34 +100,34 @@
             </div>
         </div>
             <!-- col right -->
-            <div class="w-[300px] h-auto flex flex-col gap-[20px]">
+            <div class="w-[300px] h-auto flex flex-col gap-[20px] max-md:w-full max-md:flex-col">
 
                     <div class="flex flex-col border border-[#EAF0ED] text-[#8DA291] max-md:p-0 max-md:mx-[30px]">
                         <h2 class="text-[24px] font-semibold text-center  bg-[#EAF0ED] max-md:bg-[#EAF0ED] py-[16px]">訂單摘要</h2>
                         <div class="px-[20px] py-[16px]">
                         <p class="flex justify-between font-light ">
                             <span>小計</span>
-                            <span>NT$ <span id="sum">2,700</span></span>
+                            <span>NT$ <span class="sum">2,700</span></span>
                         </p>
                         <p class="flex justify-between font-light my-[8px]">
                             <span>運費</span>
-                            <span>NT$ <span id="transport-fee">300</span></span>
+                            <span>NT$ <span class="transport-fee">300</span></span>
                         </p>
                         <h3 class="flex justify-between mt-[8px] text-[20px] font-semibold">
                             <span>總計</span>
-                            <span>NT$ <span id="total">3,000</span></span>
+                            <span>NT$ <span class="total">3,000</span></span>
                         </h3>
                         </div>
                     </div>
                 
-                <div class="flex flex-col border border-[#EAF0ED] text-[#8DA291] max-md:p-0 max-md:mx-[30px]">
+                <div class="flex flex-col border border-[#EAF0ED] text-[#8DA291] max-md:p-0 max-md:mx-[30px]  max-md:mb-[16px]">
                     <h2 class="text-[24px] font-semibold text-center  bg-[#EAF0ED] max-md:bg-[#EAF0ED] py-[16px]">購物清單</h2>
-                    <div id="confirm-list" class="flex flex-col h-[280px] overflow-y-scroll px-[20px] my-[16px] gap-[16px] confirm-list">
+                    <div id="confirm-list" class="flex flex-col h-[280px] overflow-y-scroll px-[20px] my-[16px] gap-[16px] confirm-list max-md:h-auto">
                         <template class="confirm-card-templete">
                             <div class="confirm-card flex gap-[20px] items-center">
                                 <img class="min-w-[120px] h-[80px] object-cover img-confirm" src="https://bit.ly/2QvsT63" alt="">
                                 <div>
-                                    <p class="text-[16px] font-light"> <span class="name-confirm ">焦糖馬卡龍</span> - <span class="num-confirm">2</span></p>
+                                    <p class="text-[16px] font-light"> <span class="name-confirm ">焦糖馬卡龍</span><br>（<span class="num-confirm">2</span>）</p>
                                     <h3>NT $ <span class="price-confirm text-[20px] font-semibold">900</span></h3>
                                 </div>
                             </div>

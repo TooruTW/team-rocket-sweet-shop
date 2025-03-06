@@ -112,34 +112,34 @@ let cartItems = [
     name: "水果西米露奶酪",
     price: 450,
     favorite: false,
-    buy: 0,
+    buy: 2,
     imgUrl: "https://bit.ly/2QiWeQW"
 },
 {   id: 1,
     name: "原味甜甜圈",
     price: 450,
     favorite: false,
-    buy: 0,
+    buy: 1,
     imgUrl: "https://bit.ly/2zBjQuq"
 },
 {   id: 2,
     name: "藍莓派",
     price: 450,
     favorite: false,
-    buy: 0,
+    buy: 3,
     imgUrl: "https://bit.ly/2zKOP7w"
 },   {   id: 4,
     name: "覆盆子海綿蛋糕",
     price: 450,
     favorite: false,
-    buy: 0,
+    buy: 2,
     imgUrl: "https://bit.ly/2zBDAxX"
 },
 {   id: 5,
     name: "草莓冰淇淋",
     price: 450,
     favorite: false,
-    buy: 0,
+    buy: 1,
     imgUrl: "https://bit.ly/2zL5jN7"
 }
 ]
@@ -257,10 +257,10 @@ function updateBill(transportFee){
     cartItems.forEach(item => {
         sum += item.buy * item.price
     })
-    transportFee = sum > 0 ? ( sum < 1000 ? 300 : 50 ) : 0 ;
-    document.querySelector("#sum").textContent = sum
-    document.querySelector("#transport-fee").textContent = transportFee
-    document.querySelector("#total").textContent = sum + transportFee
+    transportFee = sum > 0 ? ( sum < 1000 ? 300 : 0 ) : 0 ;
+    document.querySelector(".sum").textContent = sum
+    document.querySelector(".transport-fee").textContent = transportFee
+    document.querySelector(".total").textContent = sum + transportFee
 }
 
 function updateCart(card){
@@ -324,6 +324,7 @@ function updateConfirmList(card){
     clone.querySelector(".price-confirm").textContent = card.buy * card.price;
 
     confirmList.appendChild(clone)
+    updateBill(300)
    
 }
 
