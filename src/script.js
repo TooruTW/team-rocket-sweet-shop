@@ -299,11 +299,10 @@ function updateCart(card){
 }
 
 cartItems.forEach((item) => {
-    if(!listContainer) return
-    updateCart(item)
+    listContainer && updateCart(item);    
 })
 
-listContainer ? updateBill(300) : null ;
+listContainer && updateBill(300);
 
 
 
@@ -339,73 +338,79 @@ const paymentStatus = document.querySelector("#payment-status")
 const step = document.querySelectorAll(".step")
 const inputStatus = document.querySelectorAll(".input-zone")
 const btnNext = document.querySelector("#btn-next")
-console.log(inputStatus[0])
 
+function updatePaymentStatus(){
+    switch (paymentStatusNum) {
 
-switch (paymentStatusNum) {
-
-    case 0:
-        currentPaymentStatus.textContent = "運送"
-        document.documentElement.style.setProperty('--paymentstep-0', '#8DA291');  
-        document.documentElement.style.setProperty('--paymentstep-1', '#8DA291');  
-        step[0].classList.add("status-dot-current")
-        step[1].classList.add("status-dot-next")
-        step[2].classList.add("status-dot-next")
-
-        inputStatus[0].classList.add("flex")
-        inputStatus[1].classList.add("hidden")
-        inputStatus[2].classList.add("hidden")
-
-        break;
-    case 1:
-        currentPaymentStatus.textContent = "付款"
-        document.documentElement.style.setProperty('--paymentstep-0', '#EAF0ED');  
-        document.documentElement.style.setProperty('--paymentstep-1', '#8DA291');  
-        step[0].classList.remove("status-dot-current")
-        step[1].classList.remove("status-dot-next")
-        step[2].classList.remove("status-dot-next")
-
-        step[0].classList.add("status-dot-done")
-        step[1].classList.add("status-dot-current")
-        step[2].classList.add("status-dot-next")
-
-        inputStatus[0].classList.remove("flex")
-        inputStatus[0].classList.add("hidden")
-        inputStatus[1].classList.remove("hidden")
-        inputStatus[1].classList.add("flex")
-        inputStatus[2].classList.add("hidden")
-
-        break;
-    case 2:
-        currentPaymentStatus.textContent = "發票"
-        document.documentElement.style.setProperty('--paymentstep-0', '#EAF0ED');  
-        document.documentElement.style.setProperty('--paymentstep-1', '#EAF0ED');  
-
-        step[0].classList.remove("status-dot-done")
-        step[1].classList.remove("status-dot-current")
-        step[2].classList.remove("status-dot-next")
-
-        step[0].classList.add("status-dot-done")
-        step[1].classList.add("status-dot-done")
-        step[2].classList.add("status-dot-current")
-
-        inputStatus[0].classList.remove("flex")
-        inputStatus[0].classList.add("hidden")
-        inputStatus[1].classList.remove("flex")
-        inputStatus[1].classList.add("hidden")
-        inputStatus[2].classList.remove("hidden")
-        inputStatus[2].classList.add("flex")
+        case 0:
+            currentPaymentStatus.textContent = "運送"
+            document.documentElement.style.setProperty('--paymentstep-0', '#8DA291');  
+            document.documentElement.style.setProperty('--paymentstep-1', '#8DA291');  
+            step[0].classList.add("status-dot-current")
+            step[1].classList.add("status-dot-next")
+            step[2].classList.add("status-dot-next")
     
-        break;
+            inputStatus[0].classList.add("flex")
+            inputStatus[1].classList.add("hidden")
+            inputStatus[2].classList.add("hidden")
+    
+            break;
+        case 1:
+            currentPaymentStatus.textContent = "付款"
+            document.documentElement.style.setProperty('--paymentstep-0', '#EAF0ED');  
+            document.documentElement.style.setProperty('--paymentstep-1', '#8DA291');  
+            step[0].classList.remove("status-dot-current")
+            step[1].classList.remove("status-dot-next")
+            step[2].classList.remove("status-dot-next")
+    
+            step[0].classList.add("status-dot-done")
+            step[1].classList.add("status-dot-current")
+            step[2].classList.add("status-dot-next")
+    
+            inputStatus[0].classList.remove("flex")
+            inputStatus[0].classList.add("hidden")
+            inputStatus[1].classList.remove("hidden")
+            inputStatus[1].classList.add("flex")
+            inputStatus[2].classList.add("hidden")
+    
+            break;
+        case 2:
+            currentPaymentStatus.textContent = "發票"
+            document.documentElement.style.setProperty('--paymentstep-0', '#EAF0ED');  
+            document.documentElement.style.setProperty('--paymentstep-1', '#EAF0ED');  
+            btnNext.textContent = "確認結帳"
+    
+            step[0].classList.remove("status-dot-done")
+            step[1].classList.remove("status-dot-current")
+            step[2].classList.remove("status-dot-next")
+    
+            step[0].classList.add("status-dot-done")
+            step[1].classList.add("status-dot-done")
+            step[2].classList.add("status-dot-current")
+    
+            inputStatus[0].classList.remove("flex")
+            inputStatus[0].classList.add("hidden")
+            inputStatus[1].classList.remove("flex")
+            inputStatus[1].classList.add("hidden")
+            inputStatus[2].classList.remove("hidden")
+            inputStatus[2].classList.add("flex")
         
-
-    default:
-        break;
+            break;
+    
+        default:
+            break;
+    }
 }
 
-btnNext.addEventListener("click", ()=>{
+if(paymentStatus){
+    updatePaymentStatus()
+    btnNext.addEventListener("click", ()=>{
+        if(paymentStatusNum === 2 ) {
+            window.location.href = "complete.html"
+            return
+        }
+        paymentStatusNum ++
+        updatePaymentStatus()
+    })
+}
 
-    paymentStatusNum ++
-    
-    if(paymentStatusNum === 2 ) return
-})

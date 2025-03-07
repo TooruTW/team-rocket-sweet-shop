@@ -34,68 +34,21 @@
     </header>
     
     <main>
-        <section  class="py-[30px] px-[42px] flex justify-between gap-[20px] max-md:p-0 max-md:flex-col">
-            <div class="w-full flex flex-col max-md:w-full">
-
-                <h1 class="py-[16px] w-full text-center bg-[#EAF0ED] text-[24px] mb-[13px] font-semibold h-[65px]">您的購物車</h1>
-                
-                <div id="card-buy-container" class="card-buy-container h-auto flex flex-col gap-[1px] bg-[#EAF0ED]">
-                    
-
-                    <template id="list-template">
-                    <div id="product-templete" class="h-[150px] flex items-center w-full justify-between bg-white max-md:flex-col max-md:justify-center max-md:h-[190px] max-md:px-[30px]">
-
-                            <div class="flex w-[436px] justify-between items-center max-md:w-full">
-                                <img class="w-[110px] h-[110px] object-cover max-md:w-[157px] max-md:[106px] img-of-product" src="https://bit.ly/2QvsT63" alt="product-img">
-                                
-                                <div class="flex w-[287px] justify-between items-center max-md:w-auto max-md:flex-col max-md:items-start">
-                                    <h2 class="text-[20px]">
-                                        <span class="name-of-product font-light">焦糖馬卡龍</span>
-                                        <br class=""/>
-                                        <span class="text-[16px] font-normal">NT$ <span class="price-of-product">450</span></span>
-                                    </h2>
-                                    
-                                    <div class="flex">
-                                        <div class="decrese flex justify-center items-center h-[48px] w-[48px] border-[1px] border-[#EAF0ED]">-</div>
-                                        <div class="num flex justify-center items-center h-[48px] w-[48px] border-[1px] border-[#EAF0ED] mx-[-1px]">0</div>
-                                        <div class="increase flex justify-center items-center h-[48px] w-[48px] border-[1px] border-[#EAF0ED]">+</div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <hr class="hidden w-full max-md:block  my-[8.5px]"/>
-
-                            <h3 class="text-[20px] font-semibold max-md:self-end">NT$ <span class="unit-total">900</span></h3>
-
-                        <svg class="max-md:hidden delete-product" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="gray"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
-                    </div>
-                    </template>
-
+        <section class="mb-[60px] px-[42px] h-[460px] flex flex-col justify-center max-md:p-0 max-md:m-0">
+            <div class="w-full h-full items-center justify-center bg-complete-page bg-cover bg-center flex flex-col">
+                <div class="complete-state w-[186px] flex justify-between">
+                    <svg class="z-10" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#3F5D45"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <svg class="z-10" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#3F5D45"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <svg class="z-10" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#3F5D45"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                 </div>
-
-            </div>
-            <div class="min-w-[300px] h-fit bg-[#3F5D45] text-[#EAF0ED] max-md:bg-transparent max-md:w-full max-md:text-[#3F5D45]">
-                <div class="px-[18px] flex flex-col max-md:p-0 max-md:mx-[30px]">
-                    <h2 class="text-[24px] font-semibold text-center bg-[#3F5D45] max-md:bg-[#EAF0ED] py-[16px]">訂單摘要</h2>
-                    <hr class="mb-[16px]"/>
-                    <p class="flex justify-between font-light ">
-                        <span>小計</span>
-                        <span>NT$ <span class="sum">2,700</span></span>
-                    </p>
-                    <p class="flex justify-between font-light my-[8px]">
-                        <span>運費</span>
-                        <span>NT$ <span class="transport-fee">300</span></span>
-                    </p>
-                    <h3 class="flex justify-between mt-[8px] text-[20px] font-semibold">
-                        <span>總計</span>
-                        <span>NT$ <span class="total">3,000</span></span>
-                    </h3>
-                </div>
-                <a href="./payment.html">
-                    <button class="justify-self-end	bg-[#FFE180] h-[65px] w-full text-[#3F5D45] text-[24px] font-semibold mt-[16px]">結帳</button>
+                <img src="./src/material/lg-付款成功@2x.png" class="w-[189px] mt-[32.2px] mb-[51.34px] " alt="付款成功">
+                <a href="./product.html">
+                    <button class="w-[300px] h-[65px] bg-[#FFE180] text-[24px] font-semibold max-md:hidden">繼續逛逛</button>
                 </a>
             </div>
+            <a href="./product.html">
+                <button class="w-full h-[65px] bg-[#FFE180] text-[24px] font-semibold hidden max-md:block">繼續逛逛</button>
+            </a>
         </section>
     </main>
 

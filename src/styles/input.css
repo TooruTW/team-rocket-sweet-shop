@@ -172,6 +172,27 @@
     color: #3F5D45;
     background-color: #EAF0ED;
 }
+.complete-state{
+    position: relative;
+}
+.complete-state::after{
+    position: absolute;
+    top:11px;
+    left:20px;
+    content: " ";
+    width: 66px;
+    height: 1px;
+    border: 1px solid #3F5D45;
+}
+.complete-state::before{
+    position: absolute;
+    top:11px;
+    right:20px;
+    content: " ";
+    width: 66px;
+    height: 1px;
+    border: 1px solid #3F5D45;
+}
 
 
 @media (max-width: 768px) {
