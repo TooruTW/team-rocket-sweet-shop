@@ -162,6 +162,7 @@ function slideChange(cardNum = currentOsusumeIndex){
 slideChange()
 
 //  filter change & osusume change
+
 osusumes.forEach((element,index) => {
    element.addEventListener("click", ()=>{
     osusumes.forEach(element=>{
