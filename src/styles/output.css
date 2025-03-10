@@ -554,12 +554,50 @@ video {
   display: none;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .visible {
   visibility: visible;
 }
 
 .collapse {
   visibility: collapse;
+}
+
+.fixed {
+  position: fixed;
 }
 
 .absolute {
@@ -570,12 +608,24 @@ video {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .bottom-\[16px\] {
   bottom: 16px;
 }
 
+.bottom-\[50px\] {
+  bottom: 50px;
+}
+
 .left-0 {
   left: 0px;
+}
+
+.left-\[50px\] {
+  left: 50px;
 }
 
 .right-0 {
@@ -741,6 +791,10 @@ video {
   display: none;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -831,6 +885,10 @@ video {
 
 .h-\[496px\] {
   height: 496px;
+}
+
+.h-\[50px\] {
+  height: 50px;
 }
 
 .h-\[56px\] {
@@ -932,6 +990,10 @@ video {
 
 .w-\[24px\] {
   width: 24px;
+}
+
+.w-\[250px\] {
+  width: 250px;
 }
 
 .w-\[287px\] {
@@ -1094,6 +1156,10 @@ video {
   align-items: center;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-end {
   justify-content: flex-end;
 }
@@ -1252,6 +1318,11 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
+
 .bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity, 1));
@@ -1386,6 +1457,11 @@ video {
 .py-\[40px\] {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .pr-2 {
@@ -1687,6 +1763,10 @@ video {
   position: relative;
 }
 
+.popup-card{
+  animation: move-in-left 1s forwards, move-in-left 0.5s 2s reverse forwards;
+}
+
 .today-osusume::before{
   position: absolute;
   top: 0;
@@ -1869,6 +1949,18 @@ video {
 
   .card-poem{
     writing-mode: horizontal-tb;
+  }
+}
+
+@keyframes move-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

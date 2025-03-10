@@ -6,7 +6,6 @@
     --paymentstep-0 : #8DA291;
     --paymentstep-1 : #8DA291;
   }
-
 .card-writing-mode-vertical{
     writing-mode: vertical-rl;
 }
@@ -67,6 +66,10 @@
 .card-product{
     position: relative;
 }
+.popup-card{
+    animation: move-in-left 1s forwards, move-in-left 0.5s 2s reverse forwards;
+}
+
 .today-osusume::before{
     position: absolute;
     top: 0;
@@ -195,7 +198,6 @@
     border: 1px solid #3F5D45;
 }
 
-
 @media (max-width: 768px) {
     .rwd-show{
         display: block;
@@ -231,5 +233,16 @@
     }
     .card-poem{
         writing-mode: horizontal-tb;
+    }
+}
+
+@keyframes move-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

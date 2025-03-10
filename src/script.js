@@ -1,16 +1,12 @@
 // elements header
 const navBurger = document.querySelector("#navBurger")
 const headerList = document.querySelector("#headerList")
-
 //elements mainpage
 const currentOsusume = document.querySelector("#img-card-player")
 let currentOsusumeIndex = 0
-
 const osusumes = document.querySelectorAll(".blur-card")
-
 // elements page-product-card-container
 const pageProductCardContainer = document.querySelector(".page-product-card-container")
-
 // library
 const osusumeContainer = [
     {name: "poundCake", url: "https://bit.ly/2OhbMHr"},
@@ -18,7 +14,6 @@ const osusumeContainer = [
     {name: "creamPie", url: "https://bit.ly/2Dwoxd7"},
     {name: "popsicle", url: "https://bit.ly/2OUteif"}
 ]
-
 const products = [
     {   id: 0,
         name: "水果西米露奶酪",
@@ -106,7 +101,6 @@ const products = [
     { id: 47, name: "椰漿冰淇淋", price: 450, favorite: false, buy: 0, imgUrl: "https://bit.ly/2QiWeQW" }
     
 ]
-
 let cartItems = [ 
 {   id: 0,
     name: "水果西米露奶酪",
@@ -143,16 +137,13 @@ let cartItems = [
     imgUrl: "https://bit.ly/2zL5jN7"
 }
 ]
-
 // elements mainpage product card
 const mainPageProductCards = document.querySelectorAll(".favorite")
-
 //  show menu
 navBurger.addEventListener("click",()=>{
     console.log("clicked", headerList.classList)
     headerList.classList.toggle("md-burger-nav-ul-show")
 })
-
 // slide show
 function slideChange(cardNum = currentOsusumeIndex){
     if(!currentOsusume) return
@@ -160,9 +151,7 @@ function slideChange(cardNum = currentOsusumeIndex){
     currentOsusumeIndex = currentOsusumeIndex === (osusumeContainer.length - 1)? 0: currentOsusumeIndex + 1;
 }
 slideChange()
-
 //  filter change & osusume change
-
 osusumes.forEach((element,index) => {
    element.addEventListener("click", ()=>{
     osusumes.forEach(element=>{
@@ -172,7 +161,6 @@ osusumes.forEach((element,index) => {
     slideChange(index + 1)
    }) 
 });
-
 // product page
 const recommedThisDay = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const ninnki = [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27];
@@ -180,19 +168,14 @@ const atarashi = [6, 11, 13, 14, 16, 18, 20, 22, 23, 26, 28, 30];
 
 const menuOsusume = document.querySelector("#recommed-this-day")
 menuOsusume ? menuOsusume.innerText = `${recommedThisDay.length}`:null;
-
 const menuAll = document.querySelector("#all-procudt")
 menuAll ? menuAll.innerText = `${products.length}`:null;
-
 const menuNinnki = document.querySelector("#ninnki")
 menuNinnki ? menuNinnki.innerText = `${ninnki.length}`:null;
-
 const menuAtarashi = document.querySelector("#atarashi")
 menuAtarashi ? menuAtarashi.innerText = `${atarashi.length}`:null;
-
 // product page rendering
 let currentPageNum = 0
-
 if(pageProductCardContainer){
 for (let i = currentPageNum + 0; i <= currentPageNum + 5; i++) {
     const item = products[i]
@@ -212,12 +195,9 @@ for (let i = currentPageNum + 0; i <= currentPageNum + 5; i++) {
                 </div>`
 }
 }
-
-
-// pooduct card
+// product card
 // favorites
 const favorites = document.querySelectorAll(".favorite")
-
 favorites.forEach(element => {
     
     element.addEventListener("click",()=>{
@@ -228,17 +208,25 @@ favorites.forEach(element => {
 // add to cart
 const addToCart = document.querySelectorAll(".add-to-cart")
 
-addToCart.forEach(item =>{
+function popupReminderCard(name){
+    const container = document.querySelector("#product-page");
+    const clone = document.querySelector("#popup-reminder").content.cloneNode(true)
+    clone.querySelector(".add-item-name").textContent = name
+    container.appendChild(clone)
+    setTimeout(()=>{
+        document.querySelector(".popup-card").remove()
+    },5000)
+}
 
+addToCart.forEach(item =>{
     item.addEventListener('click',(item)=>{
         let productName = item.target.id
         let procudtInfo = products.find(item => item.name === productName)
+        popupReminderCard(productName)
         console.log(procudtInfo)
-
         if(cartItems.includes(procudtInfo)){
             let indexOfitem = cartItems.findIndex( item => item === procudtInfo)
             cartItems[indexOfitem].buy ++
-            
             console.log("already in da cart", indexOfitem, cartItems[indexOfitem].buy)
         }else{
             cartItems.push(procudtInfo)
@@ -248,11 +236,11 @@ addToCart.forEach(item =>{
     })
 })
 
+
 // cart
 // buying list
 const listContainer = document.querySelector("#card-buy-container")
 const listTemplate = document.querySelector("#list-template")
-
 function updateBill(transportFee){
     let sum = 0
     cartItems.forEach(item => {
@@ -263,7 +251,6 @@ function updateBill(transportFee){
     document.querySelector(".transport-fee").textContent = transportFee
     document.querySelector(".total").textContent = sum + transportFee
 }
-
 function updateCart(card){
         let existingItem = document.querySelector(`#${card.name}`);
         if (existingItem) {
@@ -277,7 +264,6 @@ function updateCart(card){
         clone.querySelector(".price-of-product").textContent = card.price
         clone.querySelector(".num").textContent = card.buy
         clone.querySelector(".unit-total").textContent = card.buy * card.price
-
         // eventlistener to in&decresase
         clone.querySelector(".decrese").addEventListener("click", ()=>{
             card.buy = card.buy > 0 ? card.buy -1 : 0;
@@ -295,25 +281,18 @@ function updateCart(card){
             document.querySelector(`#${card.name}`).remove()
             updateBill(300)
         })
-
         listContainer.appendChild(clone)
 }
-
 cartItems.forEach((item) => {
     listContainer && updateCart(item);    
 })
-
 listContainer && updateBill(300);
-
 
 
 // bill create
 // change status color
-
-
 const confirmList = document.querySelector("#confirm-list")
 const confirmCardTemplete = document.querySelector(".confirm-card-templete")
-
 function updateConfirmList(card){
     
     const clone = confirmCardTemplete.content.cloneNode(true)
@@ -326,12 +305,10 @@ function updateConfirmList(card){
     updateBill(300)
    
 }
-
 cartItems.forEach((item) => {
     if(!confirmList) return
     updateConfirmList(item)
 })
-
 // payment status
 let paymentStatusNum = 0
 const currentPaymentStatus = document.querySelector("#current-payment-status")
@@ -339,7 +316,6 @@ const paymentStatus = document.querySelector("#payment-status")
 const step = document.querySelectorAll(".step")
 const inputStatus = document.querySelectorAll(".input-zone")
 const btnNext = document.querySelector("#btn-next")
-
 function updatePaymentStatus(){
     switch (paymentStatusNum) {
 
@@ -402,7 +378,6 @@ function updatePaymentStatus(){
             break;
     }
 }
-
 if(paymentStatus){
     updatePaymentStatus()
     btnNext.addEventListener("click", ()=>{
@@ -414,4 +389,3 @@ if(paymentStatus){
         updatePaymentStatus()
     })
 }
-
