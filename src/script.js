@@ -101,7 +101,50 @@ const products = [
     { id: 47, name: "椰漿冰淇淋", price: 450, favorite: false, buy: 0, imgUrl: "https://bit.ly/2QiWeQW" }
     
 ]
-let cartItems = []
+let cartItems = [
+    {   id: 0,
+        name: "水果西米露奶酪",
+        price: 450,
+        favorite: false,
+        buy: 1,
+        imgUrl: "https://bit.ly/2QiWeQW"
+    },
+    {   id: 1,
+        name: "原味甜甜圈",
+        price: 450,
+        favorite: false,
+        buy: 4,
+        imgUrl: "https://bit.ly/2zBjQuq"
+    },
+    {   id: 2,
+        name: "藍莓派",
+        price: 450,
+        favorite: false,
+        buy: 2,
+        imgUrl: "https://bit.ly/2zKOP7w"
+    },
+    {   id: 3,
+        name: "焦糖蘋果千層",
+        price: 450,
+        favorite: false,
+        buy: 10,
+        imgUrl: "https://bit.ly/2NcDVuB"
+    },
+    {   id: 4,
+        name: "覆盆子海綿蛋糕",
+        price: 450,
+        favorite: false,
+        buy: 5,
+        imgUrl: "https://bit.ly/2zBDAxX"
+    },
+    {   id: 5,
+        name: "草莓冰淇淋",
+        price: 450,
+        favorite: false,
+        buy: 8,
+        imgUrl: "https://bit.ly/2zL5jN7"
+    }
+]
 // elements mainpage product card
 const mainPageProductCards = document.querySelectorAll(".favorite")
 //  show menu
