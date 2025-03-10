@@ -1464,6 +1464,11 @@ video {
   padding-right: 10px;
 }
 
+.py-\[20px\] {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .pr-2 {
   padding-right: 0.5rem;
 }

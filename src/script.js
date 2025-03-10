@@ -101,42 +101,7 @@ const products = [
     { id: 47, name: "椰漿冰淇淋", price: 450, favorite: false, buy: 0, imgUrl: "https://bit.ly/2QiWeQW" }
     
 ]
-let cartItems = [ 
-{   id: 0,
-    name: "水果西米露奶酪",
-    price: 450,
-    favorite: false,
-    buy: 2,
-    imgUrl: "https://bit.ly/2QiWeQW"
-},
-{   id: 1,
-    name: "原味甜甜圈",
-    price: 450,
-    favorite: false,
-    buy: 1,
-    imgUrl: "https://bit.ly/2zBjQuq"
-},
-{   id: 2,
-    name: "藍莓派",
-    price: 450,
-    favorite: false,
-    buy: 3,
-    imgUrl: "https://bit.ly/2zKOP7w"
-},   {   id: 4,
-    name: "覆盆子海綿蛋糕",
-    price: 450,
-    favorite: false,
-    buy: 2,
-    imgUrl: "https://bit.ly/2zBDAxX"
-},
-{   id: 5,
-    name: "草莓冰淇淋",
-    price: 450,
-    favorite: false,
-    buy: 1,
-    imgUrl: "https://bit.ly/2zL5jN7"
-}
-]
+let cartItems = []
 // elements mainpage product card
 const mainPageProductCards = document.querySelectorAll(".favorite")
 //  show menu
@@ -163,7 +128,7 @@ osusumes.forEach((element,index) => {
 });
 // product page
 const recommedThisDay = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-const ninnki = [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27];
+const ninnki = [1, 30, 4, 41, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27];
 const atarashi = [6, 11, 13, 14, 16, 18, 20, 22, 23, 26, 28, 30];
 
 const menuOsusume = document.querySelector("#recommed-this-day")
@@ -176,25 +141,60 @@ const menuAtarashi = document.querySelector("#atarashi")
 menuAtarashi ? menuAtarashi.innerText = `${atarashi.length}`:null;
 // product page rendering
 let currentPageNum = 0
-if(pageProductCardContainer){
-for (let i = currentPageNum + 0; i <= currentPageNum + 5; i++) {
-    const item = products[i]
-    pageProductCardContainer.innerHTML += 
-                `
-                <div class="card-product w-[49%] mb-[20px] max-md:w-full">
-                    <div class="favorite absolute right-[22px] top-[22px]" >
-                        <svg class="uncheck-heart" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#aa0601"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
-                        <svg class="checked-heart hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
-                    </div>
-                    <img class="h-[315px] w-full object-cover product-img" src=${item.imgUrl} alt="dount">
-                    <h2 class="flex w-full items-center text-[20px] h-[56px]">
-                        <span class="w-3/5 h-full border-l-[1px] border-[#EAF0ED] flex items-center justify-center product-name">${item.name}</span>
-                        <span class="w-2/5 h-full border border-[#EAF0ED] flex items-center justify-center product-price">NT$ ${item.price}</span>
-                    </h2>
-                    <button id=${item.name} class="add-to-cart text-center h-[65px] text-[24px] font-semibold w-full bg-[#EAF0ED]">加入購物車</button>
-                </div>`
+function renderProductPage(filter){
+    let renderArr = []
+    if(filter === products){
+        renderArr = [...products]
+    }else{
+        filter.forEach(item =>{
+            renderArr.push(products[item])
+        })
+    }
+    pageProductCardContainer.innerHTML = "";
+
+        for (let i = currentPageNum + 0; i <= currentPageNum + 5; i++) {
+            const item = renderArr[i]
+            const isRecommed = recommedThisDay.includes(item.id)
+            pageProductCardContainer.innerHTML += 
+                        `
+                        <div class="card-product w-[49%] mb-[20px] max-md:w-full ${isRecommed && "today-osusume"}">
+                            <div class="favorite absolute right-[22px] top-[22px]" >
+                                <svg class="uncheck-heart" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#aa0601"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+                                <svg class="checked-heart hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="red"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
+                            </div>
+                            <img class="h-[315px] w-full object-cover product-img" src=${item.imgUrl} alt=${item.name}>
+                            <h2 class="flex w-full items-center text-[20px] h-[56px]">
+                                <span class="w-3/5 h-full border-l-[1px] border-[#EAF0ED] flex items-center justify-center product-name">${item.name}</span>
+                                <span class="w-2/5 h-full border border-[#EAF0ED] flex items-center justify-center product-price">NT$ ${item.price}</span>
+                            </h2>
+                            <button id=${item.name} class="add-to-cart text-center h-[65px] text-[24px] font-semibold w-full bg-[#EAF0ED]">加入購物車</button>
+                        </div>`
+        }
 }
-}
+
+pageProductCardContainer && renderProductPage(products);
+const btnFilter = document.querySelectorAll(".list-switch")
+btnFilter.forEach((item,index)=>{
+    item.addEventListener("click",()=>{
+        switch (index) {
+            case 0 :
+                renderProductPage(products)
+                break;
+            case 1 :
+                renderProductPage(recommedThisDay)
+                break;
+            case 2 :
+                renderProductPage(ninnki)
+                break;
+            case 3 :
+                renderProductPage(atarashi)
+                break;
+            default:
+                break;
+        }
+    })
+})
+
 // product card
 // favorites
 const favorites = document.querySelectorAll(".favorite")
@@ -223,19 +223,15 @@ addToCart.forEach(item =>{
         let productName = item.target.id
         let procudtInfo = products.find(item => item.name === productName)
         popupReminderCard(productName)
-        console.log(procudtInfo)
         if(cartItems.includes(procudtInfo)){
             let indexOfitem = cartItems.findIndex( item => item === procudtInfo)
             cartItems[indexOfitem].buy ++
-            console.log("already in da cart", indexOfitem, cartItems[indexOfitem].buy)
         }else{
             cartItems.push(procudtInfo)
-            console.log("add to cart")
         }
-        console.log(cartItems)
     })
-})
 
+})
 
 // cart
 // buying list
